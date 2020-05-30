@@ -21,8 +21,10 @@ def sample_long_running_recognize(storage_uri):
     print(u"Waiting for operation to complete...")
     response = operation.result()
 
+    print("### " + storage_uri + " ###")
     for result in response.results:
         alternative = result.alternatives[0]
         print(u"Transcript: {}".format(alternative.transcript))
 
-sample_long_running_recognize("gs://ev-transcript/trans.mp3")
+sample_long_running_recognize("gs://ev-transcript/ToolWall.mp3")
+sample_long_running_recognize("gs://ev-transcript/Keggerator_P1.mp3")
